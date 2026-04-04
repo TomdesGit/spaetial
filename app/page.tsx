@@ -8,9 +8,22 @@ export default function Home() {
   useEffect(() => {
     const video = videoRef.current;
     if (video) {
-      video.play().catch(() => {
-        // Autoplay blocked, video will show poster
-      });
+      const playVideo = () => {
+        video.play().catch(() => {});
+      };
+
+      // Try autoplay
+      playVideo();
+
+      // On mobile, try on first user interaction
+      const handleInteraction = () => {
+        playVideo();
+        document.removeEventListener('touchstart', handleInteraction);
+        document.removeEventListener('click', handleInteraction);
+      };
+
+      document.addEventListener('touchstart', handleInteraction, { once: true });
+      document.addEventListener('click', handleInteraction, { once: true });
     }
   }, []);
 
@@ -23,7 +36,8 @@ export default function Home() {
         muted
         loop
         playsInline
-        poster="/poster-image.jpg"
+        preload="auto"
+        controls={false}
       >
         <source src="/spætial-hero.mp4" type="video/mp4" />
       </video>
