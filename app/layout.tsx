@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Spaetial Landing',
-  description: 'Landing page avec vidéo en fond, logo et contact us',
+  title: 'Spaetial',
+  description: 'Immersive soundworks and studio',
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
