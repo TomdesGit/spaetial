@@ -11,7 +11,7 @@ export default function Home() {
         <div className="logo logo--svg">
           <img src="/logo-spaetial.svg" alt="Spaetial logo" className="logo__img" />
         </div>
-        <a className="contact-link" href="mailto:contact@spaetial.example">Contact Us</a>
+        <a className="contact-link" href="mailto:contact@spaetial.com">Contact Us</a>
       </div>
     </main>
   );
