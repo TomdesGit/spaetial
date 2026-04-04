@@ -1,18 +1,27 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export default function Home() {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [showPlayButton, setShowPlayButton] = useState(false);
 
   useEffect(() => {
     const video = videoRef.current;
     if (video) {
       video.play().catch(() => {
-        // Autoplay blocked, video will show poster
+        setShowPlayButton(true);
       });
     }
   }, []);
+
+  const handlePlay = () => {
+    const video = videoRef.current;
+    if (video) {
+      video.play();
+      setShowPlayButton(false);
+    }
+  };
 
   return (
     <main className="landing">
@@ -23,10 +32,16 @@ export default function Home() {
         muted
         loop
         playsInline
-        poster="/poster-image.jpg" // Add a poster image in public/
+        poster="/poster-image.jpg"
       >
         <source src="/spætial-hero.mp4" type="video/mp4" />
       </video>
+
+      {showPlayButton && (
+        <button className="play-button" onClick={handlePlay}>
+          ▶ Play Video
+        </button>
+      )}
 
       <div className="landing__overlay" />
 
