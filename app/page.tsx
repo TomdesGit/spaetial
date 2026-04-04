@@ -1,7 +1,30 @@
+'use client';
+
+import { useEffect, useRef } from 'react';
+
 export default function Home() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (video) {
+      video.play().catch(() => {
+        // Autoplay blocked, video will show poster
+      });
+    }
+  }, []);
+
   return (
     <main className="landing">
-      <video className="landing__video" autoPlay muted loop playsInline>
+      <video
+        ref={videoRef}
+        className="landing__video"
+        autoPlay
+        muted
+        loop
+        playsInline
+        poster="/poster-image.jpg" // Add a poster image in public/
+      >
         <source src="/spætial-hero.mp4" type="video/mp4" />
       </video>
 
