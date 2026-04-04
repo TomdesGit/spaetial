@@ -1,27 +1,18 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 
 export default function Home() {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [showPlayButton, setShowPlayButton] = useState(false);
 
   useEffect(() => {
     const video = videoRef.current;
     if (video) {
       video.play().catch(() => {
-        setShowPlayButton(true);
+        // Autoplay blocked, video will show poster
       });
     }
   }, []);
-
-  const handlePlay = () => {
-    const video = videoRef.current;
-    if (video) {
-      video.play();
-      setShowPlayButton(false);
-    }
-  };
 
   return (
     <main className="landing">
@@ -36,12 +27,6 @@ export default function Home() {
       >
         <source src="/spætial-hero.mp4" type="video/mp4" />
       </video>
-
-      {showPlayButton && (
-        <button className="play-button" onClick={handlePlay}>
-          ▶ Play Video
-        </button>
-      )}
 
       <div className="landing__overlay" />
 
