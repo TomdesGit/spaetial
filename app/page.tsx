@@ -50,7 +50,7 @@ export default function Home() {
         loop
         playsInline
         preload="auto"
-        poster="/spaetial-hero-fallback.svg"
+        poster="/spaetial-hero-fallback.jpg"
         controls={false}
       >
         <source src="/spætial-hero.mp4" type="video/mp4" />
@@ -58,7 +58,7 @@ export default function Home() {
 
       {videoFailed && (
         <div className="landing__fallback" aria-hidden="true">
-          <img src="/spaetial-hero-fallback.svg" alt="Spaetial background" />
+          <img src="/spaetial-hero-fallback.jpg" alt="Spaetial background" />
         </div>
       )}
 
