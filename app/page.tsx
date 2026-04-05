@@ -21,23 +21,8 @@ export default function Home() {
       }
     };
 
-    // Try autoplay immediately.
+    // Try autoplay once. If it fails, display the fallback image permanently.
     playVideo();
-
-    // On mobile, retry on the first user interaction.
-    const handleInteraction = () => {
-      playVideo();
-      document.removeEventListener('touchstart', handleInteraction);
-      document.removeEventListener('click', handleInteraction);
-    };
-
-    document.addEventListener('touchstart', handleInteraction, { once: true });
-    document.addEventListener('click', handleInteraction, { once: true });
-
-    return () => {
-      document.removeEventListener('touchstart', handleInteraction);
-      document.removeEventListener('click', handleInteraction);
-    };
   }, []);
 
   return (
