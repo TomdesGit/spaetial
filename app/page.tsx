@@ -54,7 +54,7 @@ export default function Home() {
           <img src="/logo-spaetial.svg" alt="Spaetial logo" className="logo__img" />
         </div>
         <h1>immersive soundworks & studio</h1>
-        <a className="contact-link" href="mailto:contact@spaetial.com">Contact</a>
+        <a className="contact-link" href="mailto:contact@spaetial.fr">Contact</a>
       </div>
     </main>
   );
