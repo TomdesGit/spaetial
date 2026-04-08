@@ -52,6 +52,13 @@ body {
   justify-content: center;
 }
 
+h1 {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-weight: 100;
+    margin-bottom: 1.5rem;
+}
+
 .landing__video {
   position: absolute;
   inset: 0;
@@ -96,6 +103,10 @@ body {
   z-index: 1;
   text-align: center;
   padding: 0 1.25rem;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .logo {
@@ -103,12 +114,12 @@ body {
 }
 
 .logo__img {
-    max-width: 16rem;
+    max-width: 13.6rem;
     height: auto;
-    margin-bottom: 2rem;
-    display: block;
+    margin-bottom: 1rem;
     margin-left: auto;
     margin-right: auto;
+    display: block;
 }
 
 .logo__text {
