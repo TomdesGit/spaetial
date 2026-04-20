@@ -53,7 +53,7 @@ export default function Home() {
         <div className="logo logo--svg">
           <img src="/logo-spaetial.svg" alt="Spaetial logo" className="logo__img" />
         </div>
-        <h1>Sound creation studio dedicated to spatialization and new forms of listening</h1>
+        <h1>Sound creation studio dedicated to <br/>spatialization and new forms of listening</h1>
         <a className="contact-link" href="mailto:contact@spaetial.fr">Contact</a>
       </div>
     </main>
